@@ -13,3 +13,8 @@ https://github.com/oasis-open/csaf-documentation/blob/master/img/csaf-logo.png
 
 [ ] changelog-*.xml changeSet Author? FHG?
  
+# hyades-frontend
+
+Clarify use of csaf logo
+https://github.com/oasis-open/csaf-documentation/blob/master/img/csaf-logo.png
+SVG?

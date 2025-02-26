@@ -60,3 +60,6 @@ Liquibase plugin (if not found)
 ```
 mvn org.liquibase:liquibase-maven-plugin:4.31.1:update
 ```
+
+SELinux may not allow redpanda topic creation, disable temporarily
+# setenforce 0
