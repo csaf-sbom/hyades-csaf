@@ -4,13 +4,14 @@ This repo tracks integration of CSAF into DependencyTrack (Hyades). Since hyades
 
 We will eventually contribute all the CSAF integration code into upstream DependencyTrack repos, so this repository might not be needed in the future.
 
-## How to run
-Checkout and update submodules
-```
-git submodule update --init --recursive
-```
+## Requirements
+* Git
+* Maven
+* Java 21 OpenJDK
+* Docker (as non-root user)
 
-Build containers & run
+## How to run
+Checkout modules, build containers & run
 ```
 ./run-it-all.sh
 ```

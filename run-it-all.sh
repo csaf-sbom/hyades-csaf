@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 BASEDIR=$(dirname $(realpath $0))
 
+# Checkout git submodules
+cd $BASEDIR
+git submodule update --init --recursive
+
+
 # Build hyades modules
 cd $BASEDIR/hyades
 mvn clean package \
