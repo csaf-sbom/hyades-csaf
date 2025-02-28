@@ -1,9 +1,13 @@
 [submodule "hyades"]
 	path = hyades
 	url = https://github.com/csaf-sbom/hyades.git
+	branch = csaf
 [submodule "hyades-frontend"]
 	path = hyades-frontend
 	url = https://github.com/csaf-sbom/hyades-frontend.git
+        branch = csaf
 [submodule "hyades-apiserver"]
 	path = hyades-apiserver
 	url = https://github.com/csaf-sbom/hyades-apiserver.git
+        branch = csaf
+

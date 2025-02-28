@@ -3,7 +3,7 @@ BASEDIR=$(dirname $(realpath $0))
 
 # Checkout git submodules
 cd $BASEDIR
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 
 
 # Build hyades modules
