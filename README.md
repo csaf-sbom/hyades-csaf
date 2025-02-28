@@ -17,6 +17,7 @@ Checkout modules, build containers & run
 ```
 * It will create containers & volumes named **hyades-csaf-\***
 * **Ports will conflict** with other deployments of DependencyTracks and therefore other instances must be stopped beforehand
+* Frontend will be available at [http://localhost:8081/](http://localhost:8081/)
 
 ## Troubleshooting
 SELinux may prevent create-topics.sh from running
