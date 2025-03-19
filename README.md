@@ -6,6 +6,7 @@ We will eventually contribute all the CSAF integration code into upstream Depend
 
 ## Requirements
 * Git
+* Nodejs and npm
 * Maven
 * Java 21 OpenJDK
 * Docker (as non-root user)
