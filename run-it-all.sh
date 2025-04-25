@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 BASEDIR=$(dirname $(realpath $0))
 
+
+FRONTEND=$BASEDIR/hyades-frontend
+if [ -d "$FRONTEND" ]; then
+  echo Cleaning frontend dir
+  cd $FRONTEND
+  git clean -f
+fi
+
 # Checkout git submodules
 cd $BASEDIR
 git submodule update --init --recursive --remote
-
 
 # Build hyades modules
 cd $BASEDIR/hyades
