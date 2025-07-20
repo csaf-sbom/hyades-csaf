@@ -21,7 +21,7 @@ mvn clean package \
   -DskipTests=true
 
 # Build hyades-apiserver
-cd $BASEDIR/hyades-apiserver
+cd $BASEDIR/hyades-apiserver/apiserver
 mvn clean package \
   -Pclean-exclude-wars \
   -Penhance \
