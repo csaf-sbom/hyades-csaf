@@ -22,7 +22,7 @@ mvn clean package \
 
 # Build hyades-apiserver
 cd $BASEDIR/hyades-apiserver
-mvn install -DskipTests
+mvn install -DskipTests -Dcheckstyle.skip
 
 cd $BASEDIR/hyades-apiserver/apiserver
 mvn clean package \
