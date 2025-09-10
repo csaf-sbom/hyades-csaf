@@ -4,9 +4,13 @@ How to get it up and running locally for development
 ## Launch hyades components
 This will include workers for both mirroring and scanning tasks
 
-Run db and kafka/redpanda
+Switch to hyades folder
 ```
 cd hyades
+```
+
+Run db and kafka/redpanda
+```
 docker compose up -d
 ```
 
@@ -21,31 +25,27 @@ mvn -pl mirror-service quarkus:dev -Dcheckstyle.skip
 mvn -pl vulnerability-analyzer quarkus:dev -Dcheckstyle.skip
 ```
 
-## Launch apiserver (this repository)
+## Launch apiserver
+
 This will provide backend functionality to the frontend and coordinate worker tasks
 ```
-git clone git@github.com:csaf-sbom/hyades-apiserver.git
+cd hyades-apiserver
 ```
 
-Run locally using fhgrun.sh: maven jetty plugin+config
+For *first-run*, build it once!
 ```
-./fhgrun.sh
-```
-
-## Allow access to API endpoints
-Create the CSAF_MANAGEMENT permission
-```
-docker compose exec postgres psql -U dtrack -d dtrack -c "INSERT INTO \"PERMISSION\" (\"DESCRIPTION\", \"NAME\") VALUES ('CSAF Management permission', 'CSAF_MANAGEMENT');"
+mvn package -DskipTests -Dcheckstyle.skip
 ```
 
-Add CSAF_MANAGEMENT to your DT user:
-```Administration -> Access Management -> Managed Users```
-
+Run locally (or start it in Intellij)
+```
+mvn -pl apiserver jetty:run
+```
 
 ## Launch frontend
-Clone frontend
+Go to frontend folder
 ```
-git clone git@github.com:csaf-sbom/hyades-frontend.git
+cd hyades-frontend
 ```
 
 Run the frontend **AFTER** starting services and apiserver, it will chose the next available port automatically. 
