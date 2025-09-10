@@ -1,12 +1,12 @@
 # Local development
 How to get it up and running locally for development
+
 ## Launch hyades components
 This will include workers for both mirroring and scanning tasks
-```
-git clone git@github.com:csaf-sbom/hyades.git
-```
+
 Run db and kafka/redpanda
 ```
+cd hyades
 docker compose up -d
 ```
 
@@ -15,7 +15,7 @@ For *first-run*, build it once!
 mvn package -DskipTests -Dcheckstyle.skip
 ```
 
-Start local development
+Start local development (or start it in Intellij)
 ```
 mvn -pl mirror-service quarkus:dev -Dcheckstyle.skip
 mvn -pl vulnerability-analyzer quarkus:dev -Dcheckstyle.skip
