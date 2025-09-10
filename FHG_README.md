@@ -1,6 +1,23 @@
 # Local development
 How to get it up and running locally for development
 
+## Launch apiserver
+
+This will provide backend functionality to the frontend and coordinate worker tasks
+```
+cd hyades-apiserver
+```
+
+For *first-run*, build it once!
+```
+mvn install -DskipTests -Dcheckstyle.skip
+```
+
+Run locally (or start it in Intellij)
+```
+mvn -pl apiserver jetty:run -Dcheckstyle.skip
+```
+
 ## Launch hyades components
 This will include workers for both mirroring and scanning tasks
 
@@ -23,23 +40,6 @@ Start local development (or start it in Intellij)
 ```
 mvn -pl mirror-service quarkus:dev -Dcheckstyle.skip
 mvn -pl vulnerability-analyzer quarkus:dev -Dcheckstyle.skip
-```
-
-## Launch apiserver
-
-This will provide backend functionality to the frontend and coordinate worker tasks
-```
-cd hyades-apiserver
-```
-
-For *first-run*, build it once!
-```
-mvn install -DskipTests -Dcheckstyle.skip
-```
-
-Run locally (or start it in Intellij)
-```
-mvn -pl apiserver jetty:run -Dcheckstyle.skip
 ```
 
 ## Launch frontend
