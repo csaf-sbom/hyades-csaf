@@ -16,7 +16,7 @@ docker compose up -d
 
 For *first-run*, build it once!
 ```
-mvn package -DskipTests -Dcheckstyle.skip
+mvn install -DskipTests -Dcheckstyle.skip
 ```
 
 Start local development (or start it in Intellij)
@@ -34,7 +34,7 @@ cd hyades-apiserver
 
 For *first-run*, build it once!
 ```
-mvn package -DskipTests -Dcheckstyle.skip
+mvn install -DskipTests -Dcheckstyle.skip
 ```
 
 Run locally (or start it in Intellij)
