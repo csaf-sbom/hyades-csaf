@@ -39,7 +39,7 @@ mvn package -DskipTests -Dcheckstyle.skip
 
 Run locally (or start it in Intellij)
 ```
-mvn -pl apiserver jetty:run
+mvn -pl apiserver jetty:run -Dcheckstyle.skip
 ```
 
 ## Launch frontend
