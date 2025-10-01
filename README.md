@@ -26,4 +26,20 @@ disable temporarily with
 ```
 # setenforce 0
 ```
+## Known Issues
+In this section, we list known issues for this project.
 
+### Invalid CSAF document upload does not trigger error message
+**Description:**
+When attempting to upload an invalid CSAF document, the system does not generate any error message, leading to potential confusion for users.
+
+**Technical Details:**
+The validation of the document occurs only within the Mirror Service. Since the Mirror Service cannot communicate directly with the user interface (UI), no warning or error message can be displayed to the user upon upload of an invalid document.
+
+**Impact:**
+Users may mistakenly believe that their upload was successful, which can lead to further issues.
+
+**Status:**
+This is a known issue and will be documented as a limitation of the current system.
+
+**Link to Issue:** https://github.com/csaf-sbom/hyades-csaf/issues/11
