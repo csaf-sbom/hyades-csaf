@@ -10,7 +10,7 @@ cd hyades-apiserver
 
 For *first-run*, build it once!
 ```
-mvn install -DskipTests -Dcheckstyle.skip
+mvn -pl apiserver -am clean package
 ```
 
 Run locally (or start it in Intellij)

@@ -15,35 +15,22 @@ git submodule update --init --recursive --remote
 
 # Build hyades modules
 cd $BASEDIR/hyades
-mvn clean package \
-  -Dquarkus.container-image.build=true \
-  -Dquarkus.container-image.additional-tags=csaf-local \
-  -DskipTests=true
+mvn clean package -DskipTests=true
 
 # Build hyades-apiserver
 cd $BASEDIR/hyades-apiserver
 mvn install -DskipTests -Dcheckstyle.skip
 
-cd $BASEDIR/hyades-apiserver/apiserver
-mvn clean package \
-  -Pclean-exclude-wars \
-  -Penhance \
-  -Pembedded-jetty \
-  -DskipTests \
-  -Dcheckstyle.skip \
-  -Dlogback.configuration.file=src/main/docker/logback.xml
-docker build \
-  --build-arg WAR_FILENAME=dependency-track-apiserver.jar \
-  -t ghcr.io/dependencytrack/hyades-apiserver:csaf-local \
-  -f ./src/main/docker/Dockerfile \
-  .
+cd $BASEDIR/hyades-apiserver
+mvn -pl apiserver -am clean package -P quick
+docker build -t ghcr.io/dependencytrack/hyades-apiserver:local -f apiserver/src/main/docker/Dockerfile apiserver
 
 # Build hyades-frontend
 cd $BASEDIR/hyades-frontend
 npm install
 npm run build
-docker build -f docker/Dockerfile.alpine -t ghcr.io/dependencytrack/hyades-frontend:csaf-local .
+docker build -f docker/Dockerfile.alpine -t ghcr.io/dependencytrack/hyades-frontend:local .
 
 # Run docker-compose
-cd $BASEDIR
-docker compose --profile csaf up
+cd $BASEDIR/hyades
+docker compose --profile demo up
