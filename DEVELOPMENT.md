@@ -19,7 +19,7 @@ mvn -pl apiserver jetty:run -Dcheckstyle.skip
 ```
 
 ## Launch hyades components
-This will include workers for both mirroring and scanning tasks
+This will include workers for scanning tasks
 
 Switch to hyades folder
 ```
@@ -38,7 +38,6 @@ mvn install -DskipTests -Dcheckstyle.skip
 
 Start local development (or start it in Intellij)
 ```
-mvn -pl mirror-service quarkus:dev -Dcheckstyle.skip
 mvn -pl vulnerability-analyzer quarkus:dev -Dcheckstyle.skip
 ```
 
