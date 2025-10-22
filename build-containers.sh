@@ -34,7 +34,3 @@ cd $BASEDIR/hyades-frontend
 npm install
 npm run build
 docker build -f docker/Dockerfile.alpine -t ghcr.io/dependencytrack/hyades-frontend:snapshot .
-
-# Run docker-compose
-cd $BASEDIR/hyades
-docker compose --profile demo up
